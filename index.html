@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 45px;
+            background-color: black;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid orange;
+            margin: 0 25px;
+            display: flex;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>:
+        <div class="box" id="box2"></div>:
+        <div class="box" id="box3"></div>:
+        <div class="box" id="box4"></div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            let time = new Date();
+            let day = time.getDay();
+            let hours = time.getHours();
+            let minutes = time.getMinutes();
+            let seconds = time.getSeconds();
+    
+            let days = ["Monday, Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    
+            if (hours >= 12) {
+                let hour = hours - 12
+                document.querySelector("#box1").innerHTML = `${hour}`
+                document.querySelector("#box2").innerHTML = `${minutes}`
+                document.querySelector("#box3").innerHTML = `${seconds}`
+                document.querySelector("#box4").innerHTML = "PM"
+            }
+            else{
+                let hour = hours
+                document.querySelector("#box1").innerHTML = `${hour}`
+                document.querySelector("#box2").innerHTML = `${minutes}`
+                document.querySelector("#box3").innerHTML = `${seconds}`
+                document.querySelector("#box4").innerHTML = "AM"
+            }   
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
